@@ -2,9 +2,9 @@ class CreateCabins < ActiveRecord::Migration[5.2]
   def change
     create_table :cabins do |t|
       t.string :name
-      t.intiger :beds
+      t.integer :beds
       t.integer :deck
-      t.reference :ships
+      t.references :ship, foreign_key: true
 
       t.timestamps
     end

@@ -1,6 +1,6 @@
 class HarboursController < ApplicationController
   before_action :set_harbour, only: [:show, :edit, :update, :destroy]
-
+  rescue_from ActiveRecord::RecordNotFound, with: :redirect_if_not_found
   # GET /harbours
   # GET /harbours.json
   def index

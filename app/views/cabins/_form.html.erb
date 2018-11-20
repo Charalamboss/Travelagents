@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :beds %>
-    <%= form.text_field :beds %>
+    <%= form.number_field :beds %>
   </div>
 
   <div class="field">
@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :ships %>
-    <%= form.text_field :ships %>
+    <%= form.label :ship_id %>
+    <%= form.collection_select( :ship_id, @ships, :id, :name ) %>
   </div>
 
   <div class="actions">

@@ -1,6 +1,6 @@
 class CabinsController < ApplicationController
   before_action :set_cabin, only: [:show, :edit, :update, :destroy]
-
+  rescue_from ActiveRecord::RecordNotFound, with: :redirect_if_not_found
   # GET /cabins
   # GET /cabins.json
   def index
@@ -15,10 +15,12 @@ class CabinsController < ApplicationController
   # GET /cabins/new
   def new
     @cabin = Cabin.new
+    @ships=Ship.all
   end
 
   # GET /cabins/1/edit
   def edit
+  	@ships=Ship.all
   end
 
   # POST /cabins
@@ -69,6 +71,6 @@ class CabinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cabin_params
-      params.require(:cabin).permit(:name, :beds, :deck, :ships)
+      params.require(:cabin).permit(:name, :beds, :deck, :ship_id)
     end
 end

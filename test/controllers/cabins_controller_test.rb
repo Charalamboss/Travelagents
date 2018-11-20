@@ -17,7 +17,7 @@ class CabinsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create cabin" do
     assert_difference('Cabin.count') do
-      post cabins_url, params: { cabin: { beds: @cabin.beds, deck: @cabin.deck, name: @cabin.name, ships: @cabin.ships } }
+      post cabins_url, params: { cabin: { beds: @cabin.beds, deck: @cabin.deck, name: @cabin.name, ship_id: @cabin.ship_id } }
     end
 
     assert_redirected_to cabin_url(Cabin.last)
@@ -34,7 +34,7 @@ class CabinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update cabin" do
-    patch cabin_url(@cabin), params: { cabin: { beds: @cabin.beds, deck: @cabin.deck, name: @cabin.name, ships: @cabin.ships } }
+    patch cabin_url(@cabin), params: { cabin: { beds: @cabin.beds, deck: @cabin.deck, name: @cabin.name, ship_id: @cabin.ship_id } }
     assert_redirected_to cabin_url(@cabin)
   end
 

@@ -8,7 +8,7 @@
       <th>Name</th>
       <th>Beds</th>
       <th>Deck</th>
-      <th>Ships</th>
+      <th>Ship</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
         <td><%= cabin.name %></td>
         <td><%= cabin.beds %></td>
         <td><%= cabin.deck %></td>
-        <td><%= cabin.ships %></td>
+        <td><%= cabin.ship.name %></td>
         <td><%= link_to 'Show', cabin %></td>
         <td><%= link_to 'Edit', edit_cabin_path(cabin) %></td>
         <td><%= link_to 'Destroy', cabin, method: :delete, data: { confirm: 'Are you sure?' } %></td>

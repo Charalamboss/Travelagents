@@ -1,2 +1,34 @@
 <h1>Travelagent dot com</h1>
 <p>Find us at the MEston Building</p>
+<p>This is the info you need to know as admin</p> 
+
+ <div id="container" style="width:100%; height:400px;"></div>
+Now we add more 'script' tags to hold the javascript, which will call the Highchart file loaded earlier.
+<script type="text/javascript">
+$(function () { 
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Cruse Bookings'
+        },
+        xAxis: {
+            categories: <%=raw @cruise_names %>
+        },
+        yAxis: {
+            title: {
+                text: 'Cabins Availabe'
+            },
+            tickInterval: 1
+        },
+        series: [{
+            name: 'Cabins Availabe',
+            data: <%=raw @cabins_available %>
+        }, {
+            name: 'Cruises ',
+            data: <%= raw @cruise_names %>
+        }]
+    });
+});
+</script>

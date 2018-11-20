@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  beds: 
+  beds: 1
   deck: 1
-  ships: 
+  ship: one
 
 two:
   name: MyString
-  beds: 
+  beds: 1
   deck: 1
-  ships: 
+  ship: two

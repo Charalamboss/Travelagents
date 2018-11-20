@@ -17,7 +17,7 @@ class CabinsTest < ApplicationSystemTestCase
     fill_in "Beds", with: @cabin.beds
     fill_in "Deck", with: @cabin.deck
     fill_in "Name", with: @cabin.name
-    fill_in "Ships", with: @cabin.ships
+    fill_in "Ship", with: @cabin.ship_id
     click_on "Create Cabin"
 
     assert_text "Cabin was successfully created"
@@ -31,7 +31,7 @@ class CabinsTest < ApplicationSystemTestCase
     fill_in "Beds", with: @cabin.beds
     fill_in "Deck", with: @cabin.deck
     fill_in "Name", with: @cabin.name
-    fill_in "Ships", with: @cabin.ships
+    fill_in "Ship", with: @cabin.ship_id
     click_on "Update Cabin"
 
     assert_text "Cabin was successfully updated"
